@@ -1,0 +1,17 @@
+language: node_js
+cache:
+  directories:
+  - node_modules
+  - "~/.npm"
+node_js:
+- '12'
+git:
+  depth: 3
+deploy:
+  provider: heroku
+  skip_cleanup: true
+  keep-history: true
+  api_key:
+    secure: jk7ccYKpTlo9tLwPUtGXkPjp/3eYzhtOX0tblvWEgVvJDq/pUZ781kdCvbYLvFr9LgI0PDaHIpVB7Ph95Iw/ScEYlDqQw9+PrhfG5Cgkorn+WHST4DIYxc2sy/hTyqUgRWPKAhVPee3bYbw8/QH1YtZ3dKkZIkqNEtkBkhfiKzls1R7TyMSHe+NxdiFEmw5HGVF5jBz/MugIOxJmByRipZIcr2Ff8vcwmSOV/yONTNZO7pr5lRDAy35RjpsvfRVduSeMrGwqofq7lyg20WrGkEu2kGlx95uK4vAnRqJp+BPOjrcAckVYzyiZvKERcwp+0IZzYTwyGgT32QanPCOVRouqk9briYtbflSGvx+oBLW3UCBrwPHetY4JoaFDEqWeOvhonyYuLE8boiUBregMnxi+qO0NdKW29NGXSmu4JKdcn5O/tWgFg0K9bl0WiAOA/AjiRIxtZcLmcJfgIzK40P8lG554WtdDDsoNncRHkiPaFpqKcpmAqt4BJNb5sB2xcj63jBOXAP073iMG2j5NgBrZ3/5+EYX9sWS5cnwWgnJMefu8bslk9YzKAUMyx23vCybUsDSylqmKTTbOc64iRC5EVUz58ZeMZE1JAb9T9yHUbCBNP7E0DCS2tFCjuwMmQ4iW77nC8CwHctLkV9haGyPc5P8V6HeAmLW7M9gwyjM=
+  on:
+    repo: johan-avila/graph-pl-dir
