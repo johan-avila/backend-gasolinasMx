@@ -1,13 +1,12 @@
 {
-  "name": "backend-gasolinaMX",
+  "name": "backendgasolinamx",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=production node index",
-    "dev": "nodemon index",
-    "test": "echo \"Error: no test specified\" && exit 0"
-  },
+    "dev": "nodemon index"
+    },
   "keywords": [],
   "author": "",
   "license": "ISC",
