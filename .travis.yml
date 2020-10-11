@@ -10,8 +10,6 @@ node_js:
 git: 
   depth: 3
 
-script:
-  - yarn test
 
 notifications:
   email: 
