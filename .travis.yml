@@ -13,7 +13,6 @@ git:
 script:
   - yarn test
 
-
 notifications:
   email: 
     recipients: 
