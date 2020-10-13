@@ -6,12 +6,16 @@ class StationsService {
         this.mongodb= new MongoLib()
         this.collection = "places"
     }
-    async getAll({estado}){
+    async getAll({estado, page }){
         
-        const query = estado ? { "estado.estado.short_name":estado } : {}
-        const stations =await this.mongodb.getAll(this.collection, query)
+        const estadoValue = estado ? { "estado.estado.short_name":estado } : {}
+        const pageValue = page ? page : 1
+
         
-        return stations           
+
+        const stations =await this.mongodb.getAll(this.collection, {estadoValue, pageValue})
+        
+        return stations          
     };
     async getOne(_id){
         const station  = await this.mongodb.getOne(this.collection, _id )

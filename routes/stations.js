@@ -11,12 +11,14 @@ let LocationsRotes =(app)=>{
     //Logica
 
     router.get("/", async (request, response)=>{
-        const {estado}= request.query
-         
+        const {estado, page}= request.query
+        let nextPageNum = page ? parseInt(page)+1 : 2
+        let nextPage = `https://${request.headers.host}/api/stations?page=${nextPageNum}`
         try {
-            const stations = await stationsService.getAll({estado})
+            const stations = await stationsService.getAll({estado, page})
             response.status(200).json({
                 message:"Stations with prices",
+                nextPage: nextPage ,
                 data: stations,
                 
             })
@@ -35,6 +37,7 @@ let LocationsRotes =(app)=>{
             message: "Station with prices",
             data: station
         })
+        
       } catch (err) {
         console.log(err);
       }
