@@ -24,17 +24,25 @@
         "tags": [
           "Stations"
         ],
-        "summary": "Create user",
-        "description": "This can only be done by the logged in user.",
-        "operationId": "createUser",
+        "summary": "Traer todas las estaciones o por estados",
+        "description": "Trae las gasolineras ordenadas por precios.",
+        "operationId": "Traer estaciones ",
         "produces": [
           "application/json"
         ],
         "responses": {
-          "default": {
-            "description": "successful operation"
+          "200": {
+            "description": "Stations with prices"
           }
-        }
+        },
+        "parameters": [
+          {
+            "name": "estado",
+            "in": "query",
+            "type": "string",
+            "description": "Filtra las gasolineras por estado, se filtra atraves de las abreviaturas del nombre, aqui una lista con sus respectivos estados. Ver Listado de Estados en la seccion de \"Models\""
+          }
+        ]
       }
     },
     "/user/{station_id}": {
@@ -59,14 +67,114 @@
         ],
         "responses": {
           "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "Invalid username supplied"
+            "description": "Stations with prices"
           },
           "404": {
-            "description": "User not found"
+            "description": "Not found"
           }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "estado": {
+      "type": "object",
+      "properties": {
+        "Aguascalientes": {
+          "type": "Ags."
+        },
+        "Baja California": {
+          "type": "B.C."
+        },
+        "Baja California Sur": {
+          "type": "B.C.S"
+        },
+        "Campeche": {
+          "type": "Camp."
+        },
+        "Chiapas": {
+          "type": "Chis."
+        },
+        "Chihuahua": {
+          "type": "Chih."
+        },
+        "Ciudad de México": {
+          "type": "CDMX"
+        },
+        "Coahuila": {
+          "type": "Coah."
+        },
+        "Colima": {
+          "type": "Col."
+        },
+        "Durango": {
+          "type": "Dgo."
+        },
+        "Estado de México": {
+          "type": "Méx."
+        },
+        "Guanajuato": {
+          "type": "Gto."
+        },
+        "Guerrero": {
+          "type": "Gro."
+        },
+        "Hidalgo": {
+          "type": "Hgo."
+        },
+        "Jalisco": {
+          "type": "Jal."
+        },
+        "Michoacán": {
+          "type": "Mich."
+        },
+        "Morelos": {
+          "type": "Mor."
+        },
+        "Nayarit": {
+          "type": "Nay."
+        },
+        "Nuevo León": {
+          "type": "N.L."
+        },
+        "Oaxaca": {
+          "type": "Oax."
+        },
+        "Puebla": {
+          "type": "Pue."
+        },
+        "Querétaro": {
+          "type": "Qro."
+        },
+        "Quintana Roo": {
+          "type": "Q.R."
+        },
+        "San Luis Potosí": {
+          "type": "S.L.P."
+        },
+        "Sinaloa": {
+          "type": "Sin."
+        },
+        "Sonora": {
+          "type": "Son."
+        },
+        "Tabasco": {
+          "type": "Tab."
+        },
+        "Tamaulipas": {
+          "type": "Tamps."
+        },
+        "Tlaxcala": {
+          "type": "Tlax."
+        },
+        "Veracruz": {
+          "type": "Ver."
+        },
+        "Yucatán": {
+          "type": "Yuc."
+        },
+        "Zacatecas": {
+          "type": "Zac."
         }
       }
     }
